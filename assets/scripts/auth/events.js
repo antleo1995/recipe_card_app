@@ -37,6 +37,8 @@ const addHandlers = () => {
   // click handler for forms
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
+  $('#change-password').on('submit', onChangePassword)
+  $('#sign-out').on('click', onSignOut)
 }
 
 module.exports = {
