@@ -14,12 +14,13 @@
     <body class="container-fluid">
       <h1>Example</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+      <form id='sign-up'>
+        <fieldset>
+          <input type='text' name='credentials[email]' id='sign-up-email' placeholder='Gimme your email'>
+          <input type='password' name='credentials[password]' id='sign-up-password' placeholder='Password'>
+          <input type='password' name='credentials[password_confirmation]' id='sign-up-password-confirmation' placeholder='Password Confirm'>
+          <input type='submit' name='submit' value='Sign up!'>
+        </fieldset>
+      </form>
     </body>
 </html>
