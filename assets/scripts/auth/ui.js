@@ -19,7 +19,7 @@ const signInFailure = (error) => {
   return error
 }
 const signOutSuccess = () => {
-
+  console.log('Signed out')
 }
 const signOutFailure = (error) => {
   return error
