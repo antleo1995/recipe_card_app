@@ -1,0 +1,18 @@
+<ul>
+
+  {{#each recipes as |recipe|}}
+   <!-- Developers, why are we using data-id and not just id? -->
+  <li class='recipe{recipe.id}}'>
+    <h1> <small>Title: {{recipe.title}}</small></h1>
+    <div>
+  <ul class=“recipes”>
+      {{#each recipe}}
+     <li>{{this}}</li>
+       {{/each}}
+  </ul>
+    </div>
+  <hr>
+  </li>
+  {{/each}}
+
+</ul>
