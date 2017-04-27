@@ -9,13 +9,13 @@ const addRecipe = (data) => {
     data
   })
 }
-// const signIn = (data) => {
-//   return $.ajax({
-//     url: config.apiOrigin + '/sign-in',
-//     method: 'POST',
-//     data
-//   })
-// }
+const getRecipes = (data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/recipes',
+    method: 'GET',
+    data
+  })
+}
 // const signOut = () => {
 //   return $.ajax({
 //     url: config.apiOrigin + '/sign-out/' + store.user.id,
@@ -37,5 +37,6 @@ const addRecipe = (data) => {
 // }
 
 module.exports = {
-  addRecipe
+  addRecipe,
+  getRecipes
 }
