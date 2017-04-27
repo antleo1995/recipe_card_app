@@ -35,12 +35,22 @@
   <hr>
   <form id='change-password'>
               <fieldset>
-                <input type='submit' name='submit' value='Change Password!'>
                 <input type='password' name='passwords[old]' id='input-change-password' placeholder='Old Password'>
                 <input type='password' name='passwords[new]' id='input-change-password-new' placeholder='New Password'>
+                <input type='submit' name='submit' value='Change Password!'>
               </fieldset>
   </form>
   <hr>
   <input type="button" value="Sign out" id="sign-out">
+  <hr>
+  <div class='recipe-form-div'>
+    <form id='recipe-input-form'>
+      <input type="text" name='recipe[title]' id="recipe-title-input" placeholder="Recipe Name">
+      <input type="text" name='recipe[ingredient_list]' id="recipe-ingredients-input" placeholder="Recipe ingredients">
+      <input type="text" name='recipe[directions]' id="recipe-directions-input" placeholder="Recipe directions">
+      <input type="text" name='recipe[prep_time]' id="recipe-preptime-input" placeholder="Recipe prep time">
+      <input type='submit' name='submit' value='Upload'>
+    </form>
+  </div>
     </body>
 </html>
