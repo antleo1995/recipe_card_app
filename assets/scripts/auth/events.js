@@ -11,7 +11,6 @@ const onSignUp = function (event) {
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
-    console.log('sign up clicked')
 }
 
 const onSignIn = function (event) {
@@ -37,6 +36,7 @@ const onChangePassword = function (event) {
 const addHandlers = () => {
   // click handler for forms
   $('#sign-up').on('submit', onSignUp)
+  $('#sign-in').on('submit', onSignIn)
 }
 
 module.exports = {
