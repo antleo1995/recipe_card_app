@@ -1,5 +1,5 @@
 'use strict'
-// const store = require('../store.js')
+const store = require('../store.js')
 const showRecipesTemplate = require('../templates/recipe-listing.handlebars')
 
 const recipeSubmitSuccess = (data) => {
@@ -17,6 +17,13 @@ const recipeGetSuccess = (data) => {
 }
 
 const recipeGetFailure = (error) => {
+  return error
+}
+const singleRecipeGetSuccess = (data) => {
+  console.log(data)
+}
+
+const singleRecipeGetFailure = (error) => {
   return error
 }
 // const signInSuccess = (data) => {
@@ -43,5 +50,7 @@ module.exports = {
   recipeSubmitSuccess,
   recipeSubmitFailure,
   recipeGetSuccess,
-  recipeGetFailure
+  recipeGetFailure,
+  singleRecipeGetSuccess,
+  singleRecipeGetFailure
 }

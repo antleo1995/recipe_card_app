@@ -16,10 +16,19 @@ const onRecipeSubmit = function (event) {
 const onGetRecipe = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  console.log('recipe get')
+  console.log('recipes get')
   api.getRecipes(data)
     .then(ui.recipeGetSuccess)
     .catch(ui.recipeGetFailure)
+}
+const onGetSingleRecipe = function (event) {
+  // const data = getFormFields(this)
+  event.preventDefault()
+  console.log('get single recipe')
+  const data = $('#single-recipe').val()
+  api.getRecipe(data)
+    .then(ui.singleRecipeGetSuccess)
+    .catch(ui.singleRecipeGetFailure)
 }
 //
 // const onSignIn = function (event) {
@@ -46,9 +55,11 @@ const addHandlersRecipe = () => {
   // click handler for recipe forms
   $('#recipe-input-form').on('submit', onRecipeSubmit)
   $('#get-recipes').on('click', onGetRecipe)
+  $('#get-single-recipe').on('click', onGetSingleRecipe)
 }
 
 module.exports = {
   addHandlersRecipe,
-  onRecipeSubmit
+  onRecipeSubmit,
+  onGetSingleRecipe
 }

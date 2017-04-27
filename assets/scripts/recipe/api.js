@@ -16,6 +16,14 @@ const getRecipes = (data) => {
     data
   })
 }
+
+const getRecipe = (data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/recipes/' + data,
+    method: 'GET',
+    data
+  })
+}
 // const signOut = () => {
 //   return $.ajax({
 //     url: config.apiOrigin + '/sign-out/' + store.user.id,
@@ -38,5 +46,6 @@ const getRecipes = (data) => {
 
 module.exports = {
   addRecipe,
-  getRecipes
+  getRecipes,
+  getRecipe
 }
