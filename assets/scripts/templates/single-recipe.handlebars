@@ -1,23 +1,12 @@
-<ul>
-
-  {{#each recipes as |recipe|}}
    <!-- Developers, why are we using data-id and not just id? -->
-  <li class='recipe{recipe.id}}'>
+
     <h1> <small>Recipe Name: {{recipe.title}}</small></h1>
     <div>
-  <ul class=“recipes”>
+     <ul class=“recipes”>
 
      <li>{{recipe.ingredient_list}}</li>
      <li>{{recipe.directions}}</li>
-     {{#if recipe.prep_time}}
      <li>{{recipe.prep_time}}</li>
-     {{else}}
-     {{/if}}
 
-  </ul>
-    </div>
-  <hr>
-  </li>
-  {{/each}}
-
-</ul>
+    </ul>
+  </div>

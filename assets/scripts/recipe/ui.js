@@ -1,6 +1,7 @@
 'use strict'
-const store = require('../store.js')
+// const store = require('../store.js')
 const showRecipesTemplate = require('../templates/recipe-listing.handlebars')
+const showRecipeTemplate = require('../templates/single-recipe.handlebars')
 
 const recipeSubmitSuccess = (data) => {
   console.log('it worked')
@@ -13,14 +14,16 @@ const recipeSubmitFailure = (error) => {
 const recipeGetSuccess = (data) => {
   console.log(data.recipes)
   const showRecipesHtml = showRecipesTemplate({ recipes: data.recipes })
-  $('.content').append(showRecipesHtml)
+  $('.content').html(showRecipesHtml)
 }
 
 const recipeGetFailure = (error) => {
   return error
 }
 const singleRecipeGetSuccess = (data) => {
-  console.log(data)
+  const showRecipeHtml = showRecipeTemplate({ recipe: data.recipe })
+  $('.single-recipe-content').html(showRecipeHtml)
+  console.log(data.recipe)
 }
 
 const singleRecipeGetFailure = (error) => {
