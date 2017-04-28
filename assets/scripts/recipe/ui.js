@@ -2,6 +2,7 @@
 // const store = require('../store.js')
 const showRecipesTemplate = require('../templates/recipe-listing.handlebars')
 const showRecipeTemplate = require('../templates/single-recipe.handlebars')
+// const events = require('./events.js')
 
 const recipeSubmitSuccess = (data) => {
   console.log('it worked')
@@ -27,6 +28,13 @@ const singleRecipeGetSuccess = (data) => {
 }
 
 const singleRecipeGetFailure = (error) => {
+  return error
+}
+const deleteRecipeSuccess = (data) => {
+  console.log('delete success ran')
+}
+
+const deleteReicpeFailure = (error) => {
   return error
 }
 // const signInSuccess = (data) => {
@@ -55,5 +63,7 @@ module.exports = {
   recipeGetSuccess,
   recipeGetFailure,
   singleRecipeGetSuccess,
-  singleRecipeGetFailure
+  singleRecipeGetFailure,
+  deleteRecipeSuccess,
+  deleteReicpeFailure
 }

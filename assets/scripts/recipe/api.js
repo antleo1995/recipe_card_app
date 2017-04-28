@@ -33,6 +33,16 @@ const getRecipe = (data) => {
     data
   })
 }
+const deleteRecipe = (data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/recipes/' + data,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
 // const signOut = () => {
 //   return $.ajax({
 //     url: config.apiOrigin + '/sign-out/' + store.user.id,
@@ -56,5 +66,6 @@ const getRecipe = (data) => {
 module.exports = {
   addRecipe,
   getRecipes,
-  getRecipe
+  getRecipe,
+  deleteRecipe
 }

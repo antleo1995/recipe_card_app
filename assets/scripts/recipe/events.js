@@ -30,26 +30,23 @@ const onGetSingleRecipe = function (event) {
     .then(ui.singleRecipeGetSuccess)
     .catch(ui.singleRecipeGetFailure)
 }
-//
-// const onSignIn = function (event) {
-//   event.preventDefault()
-//   const data = getFormFields(this)
-//   api.signIn(data)
-//   .then(ui.signInSuccess)
-//   .catch(ui.signInFailure)
-// }
-// const onSignOut = function (event) {
-//   event.preventDefault()
-//   api.signOut()
-//   .then(ui.signOutSuccess)
-//   .catch(ui.signOutFailure)
-// }
-// const onChangePassword = function (event) {
-//   event.preventDefault()
-//   const data = getFormFields(this)
-//
-//   api.changePassword(data)
-// }
+const onDeleteRecipe = function (event) {
+  // const data = getFormFields(this)
+  event.preventDefault()
+  console.log('onDeleteRecipe Ran')
+  const data = $(this).attr('id')
+  console.log('on delete got: ', data)
+  api.deleteRecipe(data)
+    .then(ui.deleteRecipeSuccess)
+    .catch(ui.deleteReicpeFailure)
+  $('.single-recipe-content').html('')
+}
+const onEditRecipe = function (event) {
+  //const data = getFormFields(this)
+  event.preventDefault()
+  console.log('onDeleteRecipe Ran')
+}
+
 
 const addHandlersRecipe = () => {
   // click handler for recipe forms
@@ -61,5 +58,7 @@ const addHandlersRecipe = () => {
 module.exports = {
   addHandlersRecipe,
   onRecipeSubmit,
-  onGetSingleRecipe
+  onGetSingleRecipe,
+  onDeleteRecipe,
+  onEditRecipe
 }
