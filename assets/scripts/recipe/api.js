@@ -1,11 +1,14 @@
 'use strict'
 const config = require('../config')
-// const store = require('../store.js')
+const store = require('../store.js')
 
 const addRecipe = (data) => {
   return $.ajax({
     url: config.apiOrigin + '/recipes',
     method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
     data
   })
 }
@@ -13,6 +16,9 @@ const getRecipes = (data) => {
   return $.ajax({
     url: config.apiOrigin + '/recipes',
     method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
     data
   })
 }
@@ -21,6 +27,9 @@ const getRecipe = (data) => {
   return $.ajax({
     url: config.apiOrigin + '/recipes/' + data,
     method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
     data
   })
 }
