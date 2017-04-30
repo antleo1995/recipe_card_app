@@ -42,11 +42,14 @@ const onDeleteRecipe = function (event) {
   $('.single-recipe-content').html('')
 }
 const onEditRecipe = function (event) {
-  //const data = getFormFields(this)
+  console.log('clicked onEditRecipe')
+  const data = getFormFields(this)
+  console.log(data)
   event.preventDefault()
-  console.log('onDeleteRecipe Ran')
+  api.updateRecipe(data)
+  .then(ui.updateRecipeSuccess)
+  .catch(ui.updateRecipeFailure)
 }
-
 
 const addHandlersRecipe = () => {
   // click handler for recipe forms

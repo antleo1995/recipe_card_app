@@ -1,7 +1,7 @@
 'use strict'
 const config = require('../config')
 const store = require('../store.js')
-
+// create action requires auth
 const addRecipe = (data) => {
   return $.ajax({
     url: config.apiOrigin + '/recipes',
@@ -12,6 +12,7 @@ const addRecipe = (data) => {
     data
   })
 }
+// index action requires auth
 const getRecipes = (data) => {
   return $.ajax({
     url: config.apiOrigin + '/recipes',
@@ -22,7 +23,7 @@ const getRecipes = (data) => {
     data
   })
 }
-
+// show action gets single recipe requires auth
 const getRecipe = (data) => {
   return $.ajax({
     url: config.apiOrigin + '/recipes/' + data,
@@ -33,6 +34,7 @@ const getRecipe = (data) => {
     data
   })
 }
+// destroy action requires auth
 const deleteRecipe = (data) => {
   return $.ajax({
     url: config.apiOrigin + '/recipes/' + data,
@@ -43,29 +45,20 @@ const deleteRecipe = (data) => {
     data
   })
 }
-// const signOut = () => {
-//   return $.ajax({
-//     url: config.apiOrigin + '/sign-out/' + store.user.id,
-//     method: 'DELETE',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
-// const changePassword = (data) => {
-//   return $.ajax({
-//     url: config.apiOrigin + '/change-password/' + store.user.id,
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data
-//   })
-// }
-
+const updateRecipe = (data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/recipes/' + store.recipeID,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
 module.exports = {
   addRecipe,
   getRecipes,
   getRecipe,
-  deleteRecipe
+  deleteRecipe,
+  updateRecipe
 }

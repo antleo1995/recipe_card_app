@@ -3,19 +3,27 @@
     <h1> <small>Recipe Name: {{recipe.title}}</small></h1>
     <h2> <small>Recpe ID: {{recipe.id}}</small></h2>
     <div>
-    <form class'recipe-form-{{recipe.id}}'>
+    <form class='recipe-update-form'>
      <ul class=“recipes”>
 
-       <li class='ingredient_list{{recipe.id}}'>{{recipe.ingredient_list}}</li>
-       <li class='ingredient_list{{recipe.id}}'>{{recipe.directions}}</li>
+       <li class='ingredient_list{{recipe.id}}'>
+         <input type="text" name='recipe[title]' id="recipe-title-upate" value="{{recipe.title}}">
+       </li>
+       <li class='ingredient_list{{recipe.id}}'>
+         <input type="text" name='recipe[ingredient_list]' id="recipe-ingredients-upate" value="{{recipe.ingredient_list}}">
+       </li>
+       <li>
+         <input type="text" name='recipe[directions]' id="recipe-directions-update" value="{{recipe.directions}}">
+       </li>
        {{#if recipe.prep_time}}
-       <li>{{recipe.prep_time}}</li>
+       <li class='ingredient_list{{recipe.id}}'>
+         <input type="text" name='recipe[prep_time]' id="recipe-preptime-input" value="{{recipe.prep_time}}">
+       </li>
        {{else}}
        {{/if}}
 
        <input type="button" class='delete' id='{{recipe.id}}' value='delete'>
-       <!-- <input type="button" class='edit' id='{{recipe.id}}' value='edit'>
-       <input type="button" class='edit-recipe-submit' id='{{recipe.id}}' value='edit'> -->
+       <input type="submit" name='submit' class='recipeUpdate' id='{{recipe.id}}' value='update'>
 
      </ul>
    </form>

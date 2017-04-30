@@ -10,7 +10,7 @@ $(() => {
   authEvents.addHandlers()
   pageEvents.addHandlersRecipe()
   $(document).on('click', '.delete', pageEvents.onDeleteRecipe)
-  $(document).on('click', '.edit', pageEvents.onDeleteRecipe)
+  $(document).on('submit', '.recipe-update-form', pageEvents.onEditRecipe)
 })
 
 // use require with a reference to bundle the file and use it in this file

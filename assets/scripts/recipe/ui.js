@@ -1,7 +1,8 @@
 'use strict'
-// const store = require('../store.js')
+const store = require('../store.js')
 const showRecipesTemplate = require('../templates/recipe-listing.handlebars')
 const showRecipeTemplate = require('../templates/single-recipe.handlebars')
+// const pageEvents = require('./events.js')
 // const events = require('./events.js')
 
 const recipeSubmitSuccess = (data) => {
@@ -24,7 +25,9 @@ const recipeGetFailure = (error) => {
 const singleRecipeGetSuccess = (data) => {
   const showRecipeHtml = showRecipeTemplate({ recipe: data.recipe })
   $('.single-recipe-content').html(showRecipeHtml)
-  console.log(data.recipe)
+  // $('.recipeUpdate')('submit', pageEvents.onEditRecipe)
+  console.log(data.recipe.id)
+  store.recipeID = data.recipe.id
 }
 
 const singleRecipeGetFailure = (error) => {
@@ -35,6 +38,13 @@ const deleteRecipeSuccess = (data) => {
 }
 
 const deleteReicpeFailure = (error) => {
+  return error
+}
+const updateRecipeSuccess = (data) => {
+  console.log('update success ran')
+}
+
+const updateReicpeFailure = (error) => {
   return error
 }
 // const signInSuccess = (data) => {
@@ -65,5 +75,7 @@ module.exports = {
   singleRecipeGetSuccess,
   singleRecipeGetFailure,
   deleteRecipeSuccess,
-  deleteReicpeFailure
+  deleteReicpeFailure,
+  updateRecipeSuccess,
+  updateReicpeFailure
 }
