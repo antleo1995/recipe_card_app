@@ -18,6 +18,9 @@ const signInSuccess = (data) => {
   $('#sign-in')[0].reset()
   $('.sign-out-button').show()
   $('#sign-in-div').hide()
+  $('.create-reicpe').show()
+  $('.edit-reicpe').show()
+  $('.passwordChangeLink').show()
 }
 const signInFailure = (error) => {
   $('#signInFailModal').modal('toggle')
@@ -27,12 +30,16 @@ const signOutSuccess = () => {
   console.log('Signed out')
   $('.sign-out-button').hide()
   $('#sign-in-div').show()
+  $('.create-reicpe').hide()
+  $('.edit-reicpe').hide()
+  $('.passwordChangeLink').hide()
 }
 const signOutFailure = (error) => {
   return error
 }
 const changePasswordSuccess = () => {
   $('#changePasswordSucceedModal').modal('toggle')
+  $('#changePasswordModal').modal('toggle')
 }
 const changePasswordFailure = (error) => {
   $('#changePasswordFailedModal').modal('toggle')

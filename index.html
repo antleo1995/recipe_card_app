@@ -6,16 +6,36 @@
 
       <!-- Do not add `link` tags unless you know what you are doing -->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
+      <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
       <!-- Do not add `script` tags unless you know what you are doing -->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Antonio's Fabulous Recipe App</h1>
-
-
-  <hr>
+      <nav class='navbar navbar-inverse navbar-fixed-top navbarcustom'>
+  <div class='container'>
+    <div class='navbar-header'>
+      <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar' aria-expanded='false' aria-controls='navbar'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <a class='navbar-brand nav-font' data-target="#" data-toggle="modal" text-align='top' color='black'><div class='nav-font'>Recipe App</div></a>
+    </div>
+    <div id='navbar' class='collapse navbar-collapse'>
+      <ul class='nav navbar-nav'>
+        <li><a href='#signUp' class="createRecipe nav-fong" id='signUp'><div class='create-reicpe nav-font'>Create a Recipe</div></a></li>
+        <li><a href='#signIn' class="editRecipe nav-font" id='signIn'><div class='edit-reicpe nav-font'>Update a Recipe</div></a></li>
+        <li><a data-toggle='modal' data-target='#changePasswordModal'><div class="passwordChangeLink nav-font">Change Password</div></a></li>
+        </div>
+      </ul>
+    </div><!--/.nav-collapse -->
+ </div>
+</nav>
+  <div class='background'></div>
+    <div class='body-content'>
+      <!-- <h1 class='app-greeting'>Antonio's Fabulous Recipe App</h1> -->
   <div id="sign-in-div">
     <form id='sign-in'>
       Sign in
@@ -27,37 +47,17 @@
     </form>
     Don't have an account? <a data-toggle='modal' data-target='#signUpModal'>Sign up</a> to create an account.
   </div>
-  <hr>
-
+</br>
   <input type="button"  class='sign-out-button' value="Sign out" id="sign-out">
-  <hr>
-  <div class='recipe-form-div'>
-    <h1>Create Recipe</h1>
-    <form id='recipe-input-form'>
-      <input type="text" name='recipe[title]' id="recipe-title-input" placeholder="Recipe Name">
-      <input type="text" name='recipe[ingredient_list]' id="recipe-ingredients-input" placeholder="Recipe ingredients">
-      <input type="text" name='recipe[directions]' id="recipe-directions-input" placeholder="Recipe directions">
-      <input type="text" name='recipe[prep_time]' id="recipe-preptime-input" placeholder="Recipe prep time">
-      <input type='submit' name='submit' value='Upload'>
-    </form>
-  </div>
-  <hr>
-  <div class='singe-recipe'>
 
-     <input type='text'id="single-recipe" placeholder='Recipe ID'>
-     <input type='button' id='get-single-recipe' value='Get Recipe'>
-     <div class='single-recipe-content'>
-     </div>
-
-  </div>
-  <hr>
   <input type='button' value='Get Recipes' id='get-recipes'>
   <div class='content'>
   </div>
-                               <!-- Modals -->
+</div>
+                                      <!-- Modals Section-->
 
-                            <!-- Sign up Modals -->
-   <div class='modal fade' id='signUpModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal'>
+                                           <!-- Sign up Modal -->
+           <div class='modal fade' id='signUpModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal'>
              <div class='modal-dialog' role='document'>
                <div class='modal-content'>
                  <div class='modal-body'>
@@ -74,19 +74,21 @@
                </div><!-- /.modal-content -->
              </div><!-- /.modal-dialog -->
            </div><!-- /.modal -->
-                               <!-- Sign up fail Modals -->
-              <div class='modal fade' id='signUpFailModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal'>
-    <div class='modal-dialog' role='document'>
-      <div class='modal-content'>
-        <div class='modal-body'>
-          Email in use or passeword mismatch. Please try again.
-        </div><!-- /.modal-body -->
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
-                                <!-- end modal -->
+                                            <!-- end modal -->
 
-                                <!-- Sign in fail Modals -->
+                                       <!-- Sign up fail Modal -->
+          <div class='modal fade' id='signUpFailModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal'>
+            <div class='modal-dialog' role='document'>
+              <div class='modal-content'>
+                <div class='modal-body'>
+                  Email in use or passeword mismatch. Please try again.
+                </div><!-- /.modal-body -->
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+                                        <!-- end modal -->
+
+                                <!-- Sign in fail Modal -->
  <div class='modal fade' id='signInFailModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal'>
            <div class='modal-dialog' role='document'>
              <div class='modal-content'>
@@ -98,8 +100,8 @@
          </div><!-- /.modal -->
                                  <!-- end modal -->
 
-                                 <!-- Password change success Modals -->
- <div class='modal fade' id='changePasswordModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal'>
+                                 <!-- Password change success Modal -->
+ <div class='modal fade' id='changePasswordModal' tabindex='-1' role='dialog' aria-labelledby='myPasswordChangeModal'>
       <div class='modal-dialog' role='document'>
         <div class='modal-content'>
           <div class='modal-body'>
@@ -116,7 +118,7 @@
     </div><!-- /.modal -->
                                        <!-- end modal -->
 
-                                 <!-- Password change success Modals -->
+                                 <!-- Password change success Modal -->
  <div class='modal fade' id='changePasswordSucceedModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal'>
       <div class='modal-dialog' role='document'>
         <div class='modal-content'>
@@ -128,7 +130,7 @@
     </div><!-- /.modal -->
                                        <!-- end modal -->
 
-                                      <!-- Password change failure Modals -->
+                                      <!-- Password change failure Modal -->
     <div class='modal fade' id='changePasswordFailedModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal'>
          <div class='modal-dialog' role='document'>
            <div class='modal-content'>
@@ -139,5 +141,48 @@
          </div><!-- /.modal-dialog -->
        </div><!-- /.modal -->
                                        <!-- end modal -->
+
+                                       <!-- Create Recpipe Modal -->
+     <div class='modal fade' id='createRecipeModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal'>
+          <div class='modal-dialog' role='document'>
+            <div class='modal-content'>
+              <div class='modal-body'>
+                <div class='recipe-form-div'>
+                  <h1>Create Recipe</h1>
+                  <form id='recipe-input-form'>
+                    <input type="text" name='recipe[title]' id="recipe-title-input" placeholder="Recipe Name">
+                    <input type="text" name='recipe[ingredient_list]' id="recipe-ingredients-input" placeholder="Recipe ingredients">
+                    <input type="text" name='recipe[directions]' id="recipe-directions-input" placeholder="Recipe directions">
+                    <input type="text" name='recipe[prep_time]' id="recipe-preptime-input" placeholder="Recipe prep time">
+                    <input type='submit' name='submit' value='Upload'>
+                  </form>
+                </div>
+              </div><!-- /.modal-body -->
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+                                        <!-- end modal -->
+
+                                        <!-- Create Recpipe Modal -->
+      <div class='modal fade' id='editRecipeModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal'>
+           <div class='modal-dialog' role='document'>
+             <div class='modal-content'>
+               <div class='modal-body'>
+                 <div class='recipe-form-div'>
+                   <h1>Update Recipe</h1>
+                   <div class='singe-recipe'>
+                      <input type='text'id="single-recipe" placeholder='Recipe ID'>
+                      <input type='button' id='get-single-recipe' value='Get Recipe'>
+                      <div class='single-recipe-content'>
+                      </div>
+                   </div>
+                 </div>
+               </div><!-- /.modal-body -->
+             </div><!-- /.modal-content -->
+           </div><!-- /.modal-dialog -->
+         </div><!-- /.modal -->
+                                         <!-- end modal -->
+
+                                        <!-- end modals section -->
     </body>
 </html>
