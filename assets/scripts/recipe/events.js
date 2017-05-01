@@ -33,6 +33,7 @@ const onGetSingleRecipe = function (event) {
 const onDeleteRecipe = function (event) {
   // const data = getFormFields(this)
   event.preventDefault()
+  confirm('Are you sure?')
   api.deleteRecipe()
     .then(ui.deleteRecipeSuccess)
     .catch(ui.deleteReicpeFailure)

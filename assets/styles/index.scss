@@ -15,6 +15,12 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .edit-reicpe {
   display: none;
 }
+.ingredient {
+  float: right;
+}
+.recipe-image {
+  float: left;
+}
 .navbarcustom {
     background-color:#229922;
     color: black;
@@ -30,6 +36,9 @@ color: black;
 }
 .passwordChangeLink {
   display: none;
+}
+.recipe-container {
+  width: 25%;
 }
 .sign-out-button {
   display: none;

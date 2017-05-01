@@ -45,6 +45,7 @@ const signOutFailure = (error) => {
 const changePasswordSuccess = () => {
   $('#changePasswordSucceedModal').modal('toggle')
   $('#changePasswordModal').modal('toggle')
+  $('#change-password')[0].reset()
 }
 const changePasswordFailure = (error) => {
   $('#changePasswordFailedModal').modal('toggle')

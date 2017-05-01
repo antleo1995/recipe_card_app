@@ -5,6 +5,8 @@ const showRecipesTemplate = require('../templates/recipe-listing.handlebars')
 const showRecipeTemplate = require('../templates/single-recipe.handlebars')
 // const pageEvents = require('./events.js')
 // const events = require('./events.js')
+
+// function used to update the content div with recipes
 const updateUiWithRecipes = function () {
   api.getRecipes()
     .then(recipeGetSuccess)
@@ -16,7 +18,6 @@ const recipeSubmitSuccess = (data) => {
   $('#recipe-input-form')[0].reset()
   updateUiWithRecipes()
 }
-
 const recipeSubmitFailure = (error) => {
   return error
 }
@@ -33,7 +34,7 @@ const recipeGetFailure = (error) => {
 const singleRecipeGetSuccess = (data) => {
   const showRecipeHtml = showRecipeTemplate({ recipe: data.recipe })
   $('.single-recipe-content').html(showRecipeHtml)
-  // $('.recipeUpdate')('submit', pageEvents.onEditRecipe)
+  $('#single-recipe').val('')
   console.log(data.recipe.id)
   store.recipeID = data.recipe.id
 }
@@ -43,6 +44,7 @@ const singleRecipeGetFailure = (error) => {
 }
 const deleteRecipeSuccess = (data) => {
   console.log('delete success ran')
+  $('#editRecipeModal').modal('toggle')
   updateUiWithRecipes()
 }
 
@@ -52,6 +54,7 @@ const deleteReicpeFailure = (error) => {
 const updateRecipeSuccess = (data) => {
   console.log('update success ran')
   $('#editRecipeModal').modal('toggle')
+  $('.recipe-update-form')[0].reset()
   updateUiWithRecipes()
 }
 
