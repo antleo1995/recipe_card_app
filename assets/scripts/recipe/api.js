@@ -4,7 +4,7 @@ const store = require('../store.js')
 // create action requires auth
 const addRecipe = (data) => {
   return $.ajax({
-    url: config.apiOrigin + '/recipes/',
+    url: config.apiOrigin + '/recipes',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -15,7 +15,7 @@ const addRecipe = (data) => {
 // index action requires auth
 const getRecipes = (data) => {
   return $.ajax({
-    url: config.apiOrigin + '/recipes/',
+    url: config.apiOrigin + '/recipes',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
