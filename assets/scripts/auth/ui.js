@@ -16,6 +16,8 @@ const signUpFailure = (error) => {
 const signInSuccess = (data) => {
   store.user = data.user
   $('#sign-in')[0].reset()
+  $('.sign-out-button').show()
+  $('#sign-in-div').hide()
 }
 const signInFailure = (error) => {
   $('#signInFailModal').modal('toggle')
@@ -23,6 +25,8 @@ const signInFailure = (error) => {
 }
 const signOutSuccess = () => {
   console.log('Signed out')
+  $('.sign-out-button').hide()
+  $('#sign-in-div').show()
 }
 const signOutFailure = (error) => {
   return error

@@ -16,6 +16,7 @@
 
 
   <hr>
+  <div id="sign-in-div">
     <form id='sign-in'>
       Sign in
         <fieldset>
@@ -25,16 +26,10 @@
         </fieldset>
     </form>
     Don't have an account? <a data-toggle='modal' data-target='#signUpModal'>Sign up</a> to create an account.
+  </div>
   <hr>
-  <form id='change-password'>
-              <fieldset>
-                <input type='password' name='passwords[old]' id='input-change-password' placeholder='Old Password'>
-                <input type='password' name='passwords[new]' id='input-change-password-new' placeholder='New Password'>
-                <input type='submit' name='submit' value='Change Password!'>
-              </fieldset>
-  </form>
-  <hr>
-  <input type="button" value="Sign out" id="sign-out">
+
+  <input type="button"  class='sign-out-button' value="Sign out" id="sign-out">
   <hr>
   <div class='recipe-form-div'>
     <h1>Create Recipe</h1>
@@ -102,6 +97,24 @@
            </div><!-- /.modal-dialog -->
          </div><!-- /.modal -->
                                  <!-- end modal -->
+
+                                 <!-- Password change success Modals -->
+ <div class='modal fade' id='changePasswordModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal'>
+      <div class='modal-dialog' role='document'>
+        <div class='modal-content'>
+          <div class='modal-body'>
+            <form id='change-password'>
+                  <fieldset>
+                    <input type='password' name='passwords[old]' id='input-change-password' placeholder='Old Password'>
+                    <input type='password' name='passwords[new]' id='input-change-password-new' placeholder='New Password'>
+                    <input type='submit' name='submit' value='Change Password!'>
+                  </fieldset>
+            </form>
+          </div><!-- /.modal-body -->
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+                                       <!-- end modal -->
 
                                  <!-- Password change success Modals -->
  <div class='modal fade' id='changePasswordSucceedModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal'>
