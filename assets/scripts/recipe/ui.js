@@ -1,13 +1,20 @@
 'use strict'
 const store = require('../store.js')
+const api = require('./api.js')
 const showRecipesTemplate = require('../templates/recipe-listing.handlebars')
 const showRecipeTemplate = require('../templates/single-recipe.handlebars')
 // const pageEvents = require('./events.js')
 // const events = require('./events.js')
-
+const updateUiWithRecipes = function () {
+  api.getRecipes()
+    .then(recipeGetSuccess)
+    .catch(recipeGetFailure)
+}
 const recipeSubmitSuccess = (data) => {
   console.log('it worked')
+  $('#createRecipeModal').modal('toggle')
   $('#recipe-input-form')[0].reset()
+  updateUiWithRecipes()
 }
 
 const recipeSubmitFailure = (error) => {
@@ -17,6 +24,7 @@ const recipeGetSuccess = (data) => {
   console.log(data.recipes)
   const showRecipesHtml = showRecipesTemplate({ recipes: data.recipes })
   $('.content').html(showRecipesHtml)
+  console.log('get recipe succes ran')
 }
 
 const recipeGetFailure = (error) => {
@@ -35,6 +43,7 @@ const singleRecipeGetFailure = (error) => {
 }
 const deleteRecipeSuccess = (data) => {
   console.log('delete success ran')
+  updateUiWithRecipes()
 }
 
 const deleteReicpeFailure = (error) => {
@@ -42,31 +51,14 @@ const deleteReicpeFailure = (error) => {
 }
 const updateRecipeSuccess = (data) => {
   console.log('update success ran')
+  $('#editRecipeModal').modal('toggle')
+  updateUiWithRecipes()
 }
 
 const updateReicpeFailure = (error) => {
   return error
 }
-// const signInSuccess = (data) => {
-//   store.user = data.user
-//   console.log('This is user: ', store.user)
-// }
-// const signInFailure = (error) => {
-//   console.log('Im a failure')
-//   return error
-// }
-// const signOutSuccess = () => {
-//   console.log('Signed out')
-// }
-// const signOutFailure = (error) => {
-//   return error
-// }
-// const changePasswordSuccess = () => {
-//
-// }
-// const changePasswordFailure = (error) => {
-//   return error
-// }
+
 module.exports = {
   recipeSubmitSuccess,
   recipeSubmitFailure,

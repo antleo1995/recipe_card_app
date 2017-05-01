@@ -25,6 +25,9 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .nav-font {
 color: black;
 }
+.nav-font:hover {
+  color: white;
+}
 .passwordChangeLink {
   display: none;
 }

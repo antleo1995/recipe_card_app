@@ -1,6 +1,7 @@
 'use strict'
 const store = require('../store.js')
-
+const api = require('../recipe/api.js')
+const ui = require('../recipe/ui.js')
 // const gamelogic = require('../gamelogic/game-logic.js')
 
 const signUpSuccess = (data) => {
@@ -21,6 +22,9 @@ const signInSuccess = (data) => {
   $('.create-reicpe').show()
   $('.edit-reicpe').show()
   $('.passwordChangeLink').show()
+  api.getRecipes(data)
+    .then(ui.recipeGetSuccess)
+    .catch(ui.recipeGetFailure)
 }
 const signInFailure = (error) => {
   $('#signInFailModal').modal('toggle')
@@ -33,6 +37,7 @@ const signOutSuccess = () => {
   $('.create-reicpe').hide()
   $('.edit-reicpe').hide()
   $('.passwordChangeLink').hide()
+  $('.content').html('')
 }
 const signOutFailure = (error) => {
   return error

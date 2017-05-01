@@ -13,14 +13,14 @@ const onRecipeSubmit = function (event) {
     .then(ui.recipeSubmitSuccess)
     .catch(ui.recipeSubmitFailure)
 }
-const onGetRecipe = function (event) {
-  const data = getFormFields(this)
-  event.preventDefault()
-  console.log('recipes get')
-  api.getRecipes(data)
-    .then(ui.recipeGetSuccess)
-    .catch(ui.recipeGetFailure)
-}
+// const onGetRecipe = function (event) {
+//   const data = getFormFields(this)
+//   event.preventDefault()
+//   console.log('recipes get')
+//   api.getRecipes(data)
+//     .then(ui.recipeGetSuccess)
+//     .catch(ui.recipeGetFailure)
+// }
 const onGetSingleRecipe = function (event) {
   // const data = getFormFields(this)
   event.preventDefault()
@@ -51,7 +51,7 @@ const onEditRecipe = function (event) {
 const addHandlersRecipe = () => {
   // click handler for recipe forms
   $('#recipe-input-form').on('submit', onRecipeSubmit)
-  $('#get-recipes').on('click', onGetRecipe)
+  // $('#get-recipes').on('click', onGetRecipe)
   $('#get-single-recipe').on('click', onGetSingleRecipe)
 }
 

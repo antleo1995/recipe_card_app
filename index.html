@@ -25,8 +25,8 @@
     </div>
     <div id='navbar' class='collapse navbar-collapse'>
       <ul class='nav navbar-nav'>
-        <li><a href='#signUp' class="createRecipe nav-fong" id='signUp'><div class='create-reicpe nav-font'>Create a Recipe</div></a></li>
-        <li><a href='#signIn' class="editRecipe nav-font" id='signIn'><div class='edit-reicpe nav-font'>Update a Recipe</div></a></li>
+        <li><a data-toggle='modal' data-target='#createRecipeModal' class="createRecipe" id='signUp'><div class='create-reicpe nav-font'>Create a Recipe</div></a></li>
+        <li><a data-toggle='modal' data-target='#editRecipeModal' class="editRecipe nav-font" id='signIn'><div class='edit-reicpe nav-font'>Update a Recipe</div></a></li>
         <li><a data-toggle='modal' data-target='#changePasswordModal'><div class="passwordChangeLink nav-font">Change Password</div></a></li>
         </div>
       </ul>
@@ -49,8 +49,8 @@
   </div>
 </br>
   <input type="button"  class='sign-out-button' value="Sign out" id="sign-out">
+</br>
 
-  <input type='button' value='Get Recipes' id='get-recipes'>
   <div class='content'>
   </div>
 </div>
