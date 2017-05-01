@@ -5,17 +5,20 @@ const store = require('../store.js')
 
 const signUpSuccess = (data) => {
   console.log('it worked')
+  $('#signUpModal').modal('toggle')
+  $('#sign-up')[0].reset()
 }
 
 const signUpFailure = (error) => {
+  $('#signUpFailModal').modal('toggle')
   return error
 }
 const signInSuccess = (data) => {
   store.user = data.user
-  console.log('This is user: ', store.user)
+  $('#sign-in')[0].reset()
 }
 const signInFailure = (error) => {
-  console.log('Im a failure')
+  $('#signInFailModal').modal('toggle')
   return error
 }
 const signOutSuccess = () => {
@@ -25,9 +28,10 @@ const signOutFailure = (error) => {
   return error
 }
 const changePasswordSuccess = () => {
-
+  $('#changePasswordSucceedModal').modal('toggle')
 }
 const changePasswordFailure = (error) => {
+  $('#changePasswordFailedModal').modal('toggle')
   return error
 }
 module.exports = {

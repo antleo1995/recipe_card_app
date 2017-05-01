@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Antonio's Fabulous Recipe App</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags unless you know what you are doing -->
@@ -12,17 +12,9 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
+      <h1>Antonio's Fabulous Recipe App</h1>
 
-      <form id='sign-up'>
-        Sign up
-        <fieldset>
-          <input type='text' name='credentials[email]' id='sign-up-email' placeholder='Gimme your email'>
-          <input type='password' name='credentials[password]' id='sign-up-password' placeholder='Password'>
-          <input type='password' name='credentials[password_confirmation]' id='sign-up-password-confirmation' placeholder='Password Confirm'>
-          <input type='submit' name='submit' value='Sign up!'>
-        </fieldset>
-      </form>
+
   <hr>
     <form id='sign-in'>
       Sign in
@@ -32,6 +24,7 @@
           <input type='submit' name='submit' value='Sign in!'>
         </fieldset>
     </form>
+    Don't have an account? <a data-toggle='modal' data-target='#signUpModal'>Sign up</a> to create an account.
   <hr>
   <form id='change-password'>
               <fieldset>
@@ -54,18 +47,6 @@
     </form>
   </div>
   <hr>
-  <!-- <div class='recipe-form-div'>
-    <h1>Update Recipe</h1>
-    <form id='recipe-update-form'>
-      <input type="text" id="recipe-id-input" placeholder="Recipe ID">
-      <input type="text" name='recipe[title]' id="recipe-title-input-update" placeholder="Recipe Name">
-      <input type="text" name='recipe[ingredient_list]' id="recipe-ingredients-input-update" placeholder="Recipe ingredients">
-      <input type="text" name='recipe[directions]' id="recipe-directions-input-update" placeholder="Recipe directions">
-      <input type="text" name='recipe[prep_time]' id="recipe-preptime-input-update" placeholder="Recipe prep time">
-      <input type='submit' name='submit' value='Update'>
-    </form>
-  </div>
-  <hr> -->
   <div class='singe-recipe'>
 
      <input type='text'id="single-recipe" placeholder='Recipe ID'>
@@ -78,5 +59,72 @@
   <input type='button' value='Get Recipes' id='get-recipes'>
   <div class='content'>
   </div>
+                               <!-- Modals -->
+
+                            <!-- Sign up Modals -->
+   <div class='modal fade' id='signUpModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal'>
+             <div class='modal-dialog' role='document'>
+               <div class='modal-content'>
+                 <div class='modal-body'>
+                   <form id='sign-up'>
+                     Sign up
+                     <fieldset>
+                       <input type='text' name='credentials[email]' id='sign-up-email' placeholder='Gimme your email'>
+                       <input type='password' name='credentials[password]' id='sign-up-password' placeholder='Password'>
+                       <input type='password' name='credentials[password_confirmation]' id='sign-up-password-confirmation' placeholder='Password Confirm'>
+                       <input type='submit' name='submit' value='Sign up!'>
+                     </fieldset>
+                   </form>
+                 </div><!-- /.modal-body -->
+               </div><!-- /.modal-content -->
+             </div><!-- /.modal-dialog -->
+           </div><!-- /.modal -->
+                               <!-- Sign up fail Modals -->
+              <div class='modal fade' id='signUpFailModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal'>
+    <div class='modal-dialog' role='document'>
+      <div class='modal-content'>
+        <div class='modal-body'>
+          Email in use or passeword mismatch. Please try again.
+        </div><!-- /.modal-body -->
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+                                <!-- end modal -->
+
+                                <!-- Sign in fail Modals -->
+ <div class='modal fade' id='signInFailModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal'>
+           <div class='modal-dialog' role='document'>
+             <div class='modal-content'>
+               <div class='modal-body'>
+                 Not a user or passwords don't match. Please try again.
+               </div><!-- /.modal-body -->
+             </div><!-- /.modal-content -->
+           </div><!-- /.modal-dialog -->
+         </div><!-- /.modal -->
+                                 <!-- end modal -->
+
+                                 <!-- Password change success Modals -->
+ <div class='modal fade' id='changePasswordSucceedModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal'>
+      <div class='modal-dialog' role='document'>
+        <div class='modal-content'>
+          <div class='modal-body'>
+            Password Changed
+          </div><!-- /.modal-body -->
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+                                       <!-- end modal -->
+
+                                      <!-- Password change failure Modals -->
+    <div class='modal fade' id='changePasswordFailedModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal'>
+         <div class='modal-dialog' role='document'>
+           <div class='modal-content'>
+             <div class='modal-body'>
+               Passwords do not match
+             </div><!-- /.modal-body -->
+           </div><!-- /.modal-content -->
+         </div><!-- /.modal-dialog -->
+       </div><!-- /.modal -->
+                                       <!-- end modal -->
     </body>
 </html>
