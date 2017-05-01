@@ -53,8 +53,9 @@ const deleteReicpeFailure = (error) => {
 }
 const updateRecipeSuccess = (data) => {
   console.log('update success ran')
+  $('#recipe-update-form')[0].reset()
+  $('.single-recipe-content').html('')
   $('#editRecipeModal').modal('toggle')
-  $('.recipe-update-form')[0].reset()
   updateUiWithRecipes()
 }
 
