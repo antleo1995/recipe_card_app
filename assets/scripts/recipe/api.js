@@ -35,14 +35,13 @@ const getRecipe = (data) => {
   })
 }
 // destroy action requires auth
-const deleteRecipe = (data) => {
+const deleteRecipe = () => {
   return $.ajax({
-    url: config.apiOrigin + '/recipes/' + data,
+    url: config.apiOrigin + '/recipes/' + store.recipeID,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    },
-    data
+    }
   })
 }
 const updateRecipe = (data) => {

@@ -33,10 +33,7 @@ const onGetSingleRecipe = function (event) {
 const onDeleteRecipe = function (event) {
   // const data = getFormFields(this)
   event.preventDefault()
-  console.log('onDeleteRecipe Ran')
-  const data = $(this).attr('id')
-  console.log('on delete got: ', data)
-  api.deleteRecipe(data)
+  api.deleteRecipe()
     .then(ui.deleteRecipeSuccess)
     .catch(ui.deleteReicpeFailure)
   $('.single-recipe-content').html('')
