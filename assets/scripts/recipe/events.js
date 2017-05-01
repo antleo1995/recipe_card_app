@@ -33,11 +33,13 @@ const onGetSingleRecipe = function (event) {
 const onDeleteRecipe = function (event) {
   // const data = getFormFields(this)
   event.preventDefault()
-  confirm('Are you sure?')
-  api.deleteRecipe()
-    .then(ui.deleteRecipeSuccess)
-    .catch(ui.deleteReicpeFailure)
-  $('.single-recipe-content').html('')
+  if (confirm('Are you sure?') === true) {
+    api.deleteRecipe()
+      .then(ui.deleteRecipeSuccess)
+      .catch(ui.deleteReicpeFailure)
+    $('.single-recipe-content').html('')
+  } else {
+  }
 }
 const onEditRecipe = function (event) {
   console.log('clicked onEditRecipe')

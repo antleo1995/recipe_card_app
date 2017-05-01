@@ -3,8 +3,8 @@
   {{#each recipes as |recipe|}}
    <!-- Developers, why are we using data-id and not just id? -->
   <div class='recipe{{recipe.id}} recipe'>
-    <h1> <small>Recipe Name: {{recipe.title}}</small></h1>
-    <h2> <small>Recipe ID: {{recipe.id}}</small></h2>
+    <div class='recipe-card'> <small>Recipe Name: {{recipe.title}}</small></div>
+    <div class='recipe-card-2'> <small>Recipe ID: {{recipe.id}}</small></div>
   <div class='recipe-container'>
   <div class='row'>
      <div class='col-sm-4' width="50%">
@@ -16,9 +16,9 @@
      </div>
 
   </div>
-       Directions: {{recipe.directions}} <br>
+       Directions:&nbsp;&nbsp;{{recipe.directions}} <br>
        {{#if recipe.prep_time}}
-       Prep Time: {{recipe.prep_time}}
+       Prep Time:&nbsp;&nbsp;{{recipe.prep_time}}
        {{else}}
        {{/if}}
 
