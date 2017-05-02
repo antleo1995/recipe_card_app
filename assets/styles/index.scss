@@ -15,7 +15,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
    z-index: -100;
 
    display: block;
-   background-image: url('https://i.imgur.com/IQP9Nyg.jpg');
+   background-image: url('https://i.imgur.com/yzg18yP.jpg');
    width: auto;
    height: 2000px;
    -webkit-filter: blur(5px);
@@ -26,6 +26,28 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 .content{
   z-index: 100;
+  width: auto;
+}
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+.direction-input {
+  resize: none;
+  width: 402px;
+  margin-bottom: 0;
+}
+.directions {
+  width:400px;
+ font-size:30px;
+ word-break:normal;
+}
+.form-format {
+  width: 400px;
+  margin: 5px;
 }
 .hidden {
   pointer-events: none;
@@ -63,8 +85,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   font-size: 25px;
 }
 .recipe-container {
-  color: #d1665c;
+  color: #5ca8d1;
   font-size: 25px;
+}
+.recipe-list {
+   width:100%;
 }
 .sign-out-button {
   display: none;

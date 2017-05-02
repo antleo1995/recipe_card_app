@@ -150,10 +150,14 @@
                 <div class='recipe-form-div'>
                   <h1>Create Recipe</h1>
                   <form id='recipe-input-form'>
-                    <input type="text" name='recipe[title]' id="recipe-title-input" placeholder="Recipe Name">
-                    <input type="text" name='recipe[ingredient_list]' id="recipe-ingredients-input" placeholder="Recipe ingredients">
-                    <input type="text" name='recipe[directions]' id="recipe-directions-input" placeholder="Recipe directions">
-                    <input type="text" name='recipe[prep_time]' id="recipe-preptime-input" placeholder="Recipe prep time">
+                    Recipe Title:
+                    <input type="text" class='form-format' name='recipe[title]' id="recipe-title-input" placeholder="Recipe Name"><br>
+                    Ingredients:
+                    <input type="text" class='form-format' name='recipe[ingredient_list]' id="recipe-ingredients-input" placeholder="Recipe ingredients"><br>
+                    Directions:
+                    <textarea class='direction-input form-format' rows='4' name='recipe[directions]' id="recipe-directions-input" placeholder="Recipe directions" wrap='soft'></textarea><br>
+                    Prep time(optional):
+                    <input type="text" margin-top='0' class='form-format' name='recipe[prep_time]' id="recipe-preptime-input" placeholder="Recipe prep time">
                     <input type='submit' name='submit' value='Upload'>
                   </form>
                 </div>
@@ -164,7 +168,7 @@
                                         <!-- end modal -->
 
                                         <!-- Create Recpipe Modal -->
-      <div class='modal fade' id='editRecipeModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal'>
+      <div class='modal fade' id='editRecipeModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal' width="auto">
            <div class='modal-dialog' role='document'>
              <div class='modal-content'>
                <div class='modal-body'>
