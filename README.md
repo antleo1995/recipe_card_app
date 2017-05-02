@@ -28,22 +28,7 @@ More talbes would be needed to make this work better. Specifically a join table
 between recipes and ingredients. Once this is implemented the handlbars helper
 would likely not be needed as I could iterate a list of ingredients from a server
 
-Yet to front end data validation - error handling is mostly there.
-
-## Dependencies
-
-Install with `npm install`.
-
--   [Webpack](https://webpack.github.io)
--   [Bootstrap](http://getbootstrap.com)
--   [Handlebars.js](http://handlebarsjs.com)
-
-At the beginning of each cohort, update the versions in
-[`package.json`](package.json) by replace all versions with a glob (`*`) and
-running `npm update --save && npm update --save-dev`. You may wish to test these
-changes by deleting the `node_modules` directory and running `npm install`.
-Fix any conflicts.
-
+Yet to add front end data validation - error handling is mostly there.
 
 ## Prodcuction info
 
