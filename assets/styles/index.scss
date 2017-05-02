@@ -8,12 +8,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   width: 100%;
   height: 60px;
 }
-.create-reicpe {
-  display: none;
-
-}
-.edit-reicpe {
-  display: none;
+.hidden {
+  pointer-events: none;
 }
 .ingredient {
   float: right;
@@ -33,9 +29,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 .nav-font:hover {
   color: white;
-}
-.passwordChangeLink {
-  display: none;
 }
 .recipe-container {
   width: 25%;
