@@ -12,6 +12,7 @@ const signUpSuccess = (data) => {
 
 const signUpFailure = (error) => {
   $('#signUpFailModal').modal('toggle')
+  $('#sign-up')[0].reset()
   return error
 }
 const signInSuccess = (data) => {
@@ -28,6 +29,7 @@ const signInSuccess = (data) => {
 }
 const signInFailure = (error) => {
   $('#signInFailModal').modal('toggle')
+  $('#sign-in')[0].reset()
   return error
 }
 const signOutSuccess = () => {
