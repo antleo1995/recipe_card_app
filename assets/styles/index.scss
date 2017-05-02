@@ -1,6 +1,9 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-
+.col {
+  min-width: 400px;
+  border-style: solid;
+}
 .app-greeting {
   position: fixed;
   top: 0px;
