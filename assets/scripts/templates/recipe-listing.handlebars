@@ -1,13 +1,15 @@
 
 <div class='recipe-list' width='100%'>
-
   {{#each recipes as |recipe|}}
-   <!-- Developers, why are we using data-id and not just id? -->
+
   <div class='recipe{{recipe.id}} recipe'>
+
     <div class='recipe-card'> <small>Recipe Name: {{recipe.title}}</small></div>
     <div class='recipe-card-2'> <small>Recipe ID: {{recipe.id}}</small></div>
+
   <div class='recipe-container'>
   <div class='row'>
+
      <div class='col-sm-6 col-md-6 col-lg-6 clearfix' display='block'>
        <img class='recipe-image clearfix' height="150px" width="150px" src="http://i.imgur.com/dj5SOjp.jpg">
      </div>
@@ -17,9 +19,10 @@
      </div>
 
   </div class='row'>
-  <div width='25%' word-wrap='break-word' class='directions'>
+  <div word-wrap='break-word' class='directions'>
        Directions:&nbsp;&nbsp;{{recipe.directions}} <br>
   </div>
+
        {{#if recipe.prep_time}}
        Prep Time:&nbsp;&nbsp;{{recipe.prep_time}}
        {{else}}
@@ -29,5 +32,5 @@
   <hr>
 </div>
   {{/each}}
-
+</div>
 </div>

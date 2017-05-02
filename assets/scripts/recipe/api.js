@@ -44,6 +44,7 @@ const deleteRecipe = () => {
     }
   })
 }
+// update action requires auth
 const updateRecipe = (data) => {
   return $.ajax({
     url: config.apiOrigin + '/recipes/' + store.recipeID,
