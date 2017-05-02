@@ -32,13 +32,15 @@ Yet to add front end data validation - error handling is mostly there.
 
 ## Prodcuction info
 
-Production URL: https://antleo1995.github.io/recipe_card_app/
-Repo: https://github.com/antleo1995/recipe_card_app
+Production URL:https://antleo1995.github.io/recipe_card_app/
+
+Repo:https://github.com/antleo1995/recipe_card_app
 
 ## Production info for API
 
-Production URL: https://recipe-card-backend.herokuapp.com/
-Repo: https://github.com/antleo1995/recipe_card_app_api
+Production URL:https://recipe-card-backend.herokuapp.com/
+
+Repo:https://github.com/antleo1995/recipe_card_app_api
 
 ## [License](LICENSE)
 
