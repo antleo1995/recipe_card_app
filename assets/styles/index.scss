@@ -104,6 +104,9 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   font-size: 20px;
   color: white;
 }
+.sign-up:hover {
+  cursor: pointer;
+}
 #greeting-content {
   background: #466368;
   background: -webkit-linear-gradient(#d1665c, #ffffff);
