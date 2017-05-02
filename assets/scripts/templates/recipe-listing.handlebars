@@ -6,12 +6,12 @@
     <div class='recipe-card'> <small>Recipe Name: {{recipe.title}}</small></div>
     <div class='recipe-card-2'> <small>Recipe ID: {{recipe.id}}</small></div>
   <div class='recipe-container'>
-  <div class='row'>
-     <div class='col-sm-6 clearfix' margin-right='40px' display='block'>
-       <img class='recipe-image' height="100px" width="100px" src="http://i.imgur.com/dj5SOjp.jpg">
+  <div class='row' width='auto'>
+     <div class='col-sm-6 clearfix' width='200px'display='block' background-color='blue'>
+       <img class='recipe-image clearfix' height="150px" width="150px" src="http://i.imgur.com/dj5SOjp.jpg">
      </div>
 
-     <div class='col-sm-6' margin-left='40px' width='800px' float:'right'>
+     <div class='col-sm-6' margin-left='40px' width='800px' float:'right' background-color='green'>
        <ul>{{{recipe.ingredient_list}}}</ul>
      </div>
 
