@@ -19,7 +19,7 @@ for a recipe to be searched by name.
 Getting the recipes to show in a format that looked like I wanted proved more
 difficult than I had hoped. Ideally the site would allow a user to input a list
 of ingredients that was comma delimited and handlebars would parse this out into
-a list of <li> tagged ingredients. I was not able to figure out how to make a
+a list of LI tagged ingredients. I was not able to figure out how to make a
 handlbars helper in the scope of this project.
 
 ## To do list
