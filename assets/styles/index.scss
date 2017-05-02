@@ -26,7 +26,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 .content{
   z-index: 100;
-  width: auto;
+  width: 100%;
 }
 .clearfix:after {
    content: " "; /* Older browser do not support empty content */

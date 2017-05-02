@@ -1,4 +1,5 @@
-<ul class='recipe-list'>
+
+<div class='recipe-list' width='100%'>
 
   {{#each recipes as |recipe|}}
    <!-- Developers, why are we using data-id and not just id? -->
@@ -6,12 +7,12 @@
     <div class='recipe-card'> <small>Recipe Name: {{recipe.title}}</small></div>
     <div class='recipe-card-2'> <small>Recipe ID: {{recipe.id}}</small></div>
   <div class='recipe-container'>
-  <div class='row' width='auto'>
-     <div class='col-sm-6 clearfix' width='200px'display='block' background-color='blue'>
+  <div class='row' width='8000px'>
+     <div class='col-sm-6 col-md-6 col-lg-6 clearfix' display='block'>
        <img class='recipe-image clearfix' height="150px" width="150px" src="http://i.imgur.com/dj5SOjp.jpg">
      </div>
 
-     <div class='col-sm-6' margin-left='40px' width='800px' float:'right' background-color='green'>
+     <div class='col-sm-6 col-md-6 col-lg-6' margin-left='40px' width='800px' float:'right'>
        <ul>{{{recipe.ingredient_list}}}</ul>
      </div>
 
@@ -29,4 +30,4 @@
 </div>
   {{/each}}
 
-</ul>
+</div>

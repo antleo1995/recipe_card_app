@@ -1,0 +1,13 @@
+Handlebars.registerHelper('create-list', function (object) {
+  let list = object.ingredients_list
+  list = list.split(',')
+var html = ''
+
+ for(var i=0; i<list.length; i++) {
+    html += '<li>' + list[i] + '</li>'
+  }
+
+  return new Handlebars.SafeString(
+       html
+  )
+})
