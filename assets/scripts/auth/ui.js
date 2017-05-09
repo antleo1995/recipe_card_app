@@ -30,7 +30,6 @@ const signInSuccess = (data) => {
   // as a user could still click on hidden divs
   // removes the hidden class on sign in
   $('.createRecipe').removeClass('hidden')
-  $('.editRecipe').removeClass('hidden')
   $('.changePassword').removeClass('hidden')
   // retrieves user's recipes on sign on
   api.getRecipes(data)

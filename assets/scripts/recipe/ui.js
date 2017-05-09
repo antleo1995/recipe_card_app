@@ -26,7 +26,13 @@ const recipeGetSuccess = (data) => {
   // runs handlebars and sets content to variable
   const showRecipesHtml = showRecipesTemplate({ recipes: data.recipes })
   // loads conent div with return from handlebars
-  $('.content').html(showRecipesHtml)
+  if (data.recipes.length === 0) {
+    $('.content').html('<p>Please create a recipe</p>')
+    $('.editRecipe').addClass('hidden')
+  } else {
+    $('.editRecipe').removeClass('hidden')
+    $('.content').html(showRecipesHtml)
+  }
 }
 
 const recipeGetFailure = (error) => {
