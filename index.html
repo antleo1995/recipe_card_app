@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Antonio's Fabulous Recipe App</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags unless you know what you are doing -->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+      <!-- Do not add `script` tags unless you know what you are doing -->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+      <nav class='navbar navbar-inverse navbar-fixed-top navbarcustom'>
+  <div class='container'>
+    <div class='navbar-header'>
+      <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar' aria-expanded='false' aria-controls='navbar'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <a class='navbar-brand nav-font' data-target="#easterEggModal" data-toggle="modal" text-align='top' color='black'><div class='nav-font'>Antonio's Recipe App</div></a>
+    </div>
+    <div id='navbar' class='collapse navbar-collapse'>
+      <ul class='nav navbar-nav'>
+        <li><a data-toggle='modal' data-target='#createRecipeModal' class="createRecipe hidden" id='signUp'><div class='create-reicpe nav-font'>Create a Recipe</div></a></li>
+        <li><a data-toggle='modal' data-target='#editRecipeModal' class="editRecipe nav-font hidden" id='signIn'><div class='edit-reicpe nav-font'>Update a Recipe</div></a></li>
+        <li><a data-toggle='modal' data-target='#changePasswordModal' class='hidden changePassword' id='changePassword'><div class="nav-font">Change Password</div></a></li>
+        </div>
+      </ul>
+    </div><!--/.nav-collapse -->
+ </div>
+</nav>
+<div class='background'></div>
+    <div class='body-content'>
+     <div id="sign-in-div">
+     <form id='sign-in'>
+      Sign in
+        <fieldset>
+          <input type='text' class="sign-in-form" name='credentials[email]' id='sign-in-email' placeholder='Input your email'>
+          <input type='password' class="sign-in-form" name='credentials[password]' id='sign-in-password' placeholder='Password'>
+          <input type='submit' name='submit' value='Sign in!'>
+        </fieldset>
+    </form>
+    Don't have an account? <a data-toggle='modal' data-target='#signUpModal' class="sign-up">Sign up</a> to create an account.
+  </div>
+</br>
+  <input type="button"  class='sign-out-button' value="Sign out" id="sign-out">
+</br>
+<hr>
+<div id='greeting-content'>
+<img class='recipe-image clearfix' height="225px" width="175px" src="https://i.imgur.com/AeUL1Cb.jpg"><p>
+    &nbsp;Welcome to my second project for WDI. This is a recipe app made by yours truly. It has just a few basic features at this juncture.
+     Sign in to create an account and take it for a spin. <br>
+     &nbsp;Recipes can be added and are automatically loaded on screen. Use the "Update a Recipe" nav link to edit or delete recipes.<br>
+     Some of the technologies used include boostrap, handlebars, and jquery for the UI. The backend is an API running ruby on rails
+     hosted on <a href="http://www.heroku.com">Heroku</a>. <br>
+     For those interested you can follow this <a href='https://github.com/antleo1995/recipe_card_app'>link</a> to my <a href='http://www.github.com'>github</a> repository.
+     Feel free to edit and update and send me a pull request. Always happy to colloborate as I still have plenty to learn.<br>
+     In future iterations I would like to include the ability to see recipes from other users, but for now, there are deadlines to meet. I hope you all enjoy.
+</div>
+  <div class='content'>
+  </div>
+</div>
+                                      <!-- Modals Section-->
+
+                                           <!-- Sign up Modal -->
+           <div class='modal fade' id='signUpModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal'>
+             <div class='modal-dialog' role='document'>
+               <div class='modal-content'>
+                 <div class='modal-body'>
+                   <form id='sign-up'>
+                     Sign up
+                     <fieldset>
+                       <input type='text' name='credentials[email]' id='sign-up-email' placeholder='Gimme your email'>
+                       <input type='password' name='credentials[password]' id='sign-up-password' placeholder='Password'>
+                       <input type='password' name='credentials[password_confirmation]' id='sign-up-password-confirmation' placeholder='Password Confirm'>
+                       <input type='submit' name='submit' value='Sign up!'>
+                     </fieldset>
+                   </form>
+                 </div><!-- /.modal-body -->
+               </div><!-- /.modal-content -->
+             </div><!-- /.modal-dialog -->
+           </div><!-- /.modal -->
+                                            <!-- end modal -->
+
+                                       <!-- Sign up fail Modal -->
+          <div class='modal fade' id='signUpFailModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal'>
+            <div class='modal-dialog' role='document'>
+              <div class='modal-content'>
+                <div class='modal-body'>
+                  Email in use or password mismatch. Please try again.
+                </div><!-- /.modal-body -->
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+                                        <!-- end modal -->
+
+                                <!-- Sign in fail Modal -->
+ <div class='modal fade' id='signInFailModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal'>
+           <div class='modal-dialog' role='document'>
+             <div class='modal-content'>
+               <div class='modal-body'>
+                 Not a user or password is incorrect. Please try again.
+               </div><!-- /.modal-body -->
+             </div><!-- /.modal-content -->
+           </div><!-- /.modal-dialog -->
+         </div><!-- /.modal -->
+                                 <!-- end modal -->
+
+                                 <!-- Password change success Modal -->
+ <div class='modal fade' id='changePasswordModal' tabindex='-1' role='dialog' aria-labelledby='myPasswordChangeModal'>
+      <div class='modal-dialog' role='document'>
+        <div class='modal-content'>
+          <div class='modal-body'>
+            <form id='change-password'>
+                  <fieldset>
+                    <input type='password' name='passwords[old]' id='input-change-password' placeholder='Old Password'>
+                    <input type='password' name='passwords[new]' id='input-change-password-new' placeholder='New Password'>
+                    <input type='submit' name='submit' value='Change Password!'>
+                  </fieldset>
+            </form>
+          </div><!-- /.modal-body -->
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+                                       <!-- end modal -->
+
+                                 <!-- Password change success Modal -->
+ <div class='modal fade' id='changePasswordSucceedModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal'>
+      <div class='modal-dialog' role='document'>
+        <div class='modal-content'>
+          <div class='modal-body'>
+            Password Changed
+          </div><!-- /.modal-body -->
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+                                       <!-- end modal -->
+
+                                      <!-- Password change failure Modal -->
+    <div class='modal fade' id='changePasswordFailedModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal'>
+         <div class='modal-dialog' role='document'>
+           <div class='modal-content'>
+             <div class='modal-body'>
+               Passwords do not match
+             </div><!-- /.modal-body -->
+           </div><!-- /.modal-content -->
+         </div><!-- /.modal-dialog -->
+       </div><!-- /.modal -->
+                                       <!-- end modal -->
+
+                                       <!-- Create Recpipe Modal -->
+     <div class='modal fade' id='createRecipeModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal'>
+          <div class='modal-dialog' role='document'>
+            <div class='modal-content'>
+              <div class='modal-body'>
+                <div class='recipe-form-div'>
+                  <h1>Create Recipe</h1>
+                  <form id='recipe-input-form'>
+                    Recipe Title:
+                    <input type="text" class='form-format' name='recipe[title]' id="recipe-title-input" placeholder="Recipe Name"><br>
+                    Ingredients:
+                    <input type="text" class='form-format' name='recipe[ingredient_list]' id="recipe-ingredients-input" placeholder="Recipe ingredients"><br>
+                    Directions:
+                    <textarea class='direction-input form-format' rows='4' name='recipe[directions]' id="recipe-directions-input" placeholder="Recipe directions" wrap='soft'></textarea><br>
+                    Prep time(optional):
+                    <input type="text" margin-top='0' class='form-format' name='recipe[prep_time]' id="recipe-preptime-input" placeholder="Recipe prep time">
+                    <input type='submit' name='submit' value='Upload'>
+                  </form>
+                </div>
+              </div><!-- /.modal-body -->
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+                                        <!-- end modal -->
+
+                                        <!-- Create Recpipe Modal -->
+      <div class='modal fade' id='editRecipeModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal' width="auto">
+           <div class='modal-dialog' role='document'>
+             <div class='modal-content'>
+               <div class='modal-body'>
+                 <div class='recipe-form-div'>
+                   <h1>Update Recipe</h1>
+                   <div class='singe-recipe'>
+                      <input type='text'id="single-recipe" placeholder='Recipe ID'>
+                      <input type='button' id='get-single-recipe' value='Get Recipe'>
+                      <div class='single-recipe-content'>
+                    </div>
+                   </div>
+                 </div>
+               </div><!-- /.modal-body -->
+             </div><!-- /.modal-content -->
+           </div><!-- /.modal-dialog -->
+         </div><!-- /.modal -->
+                                         <!-- end modal -->
+
+                                         <!-- Easter egg modal -->
+       <div class='modal fade' id='easterEggModal' tabindex='-1' role='dialog' aria-labelledby='mySignUpModal'>
+            <div class='modal-dialog' role='document'>
+              <div class='modal-content'>
+                <div class='modal-body'>
+                 <p><small>
+                          I like good food and I cannot lie! You other foodies can't deny
+                          when a girl walks in with a bag of mickey d's<br>
+                          And a large sweet tea<br>
+                          You get sick, wanna run out the door
+                          Cause that ain't what you asked for
+                          We gotta go get something better
+                          Making me wish I'd never met her<br>
+                          Oh baby, this food is disgusting<br>
+                          I'd rather eat nothing<br>
+                          <strong>Homie got snacks!</strong>
+                </small>
+                </p>
+                </div><!-- /.modal-body -->
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+                                        <!-- end modal -->
+                                        <!-- end modals section -->
+    </body>
+</html>
